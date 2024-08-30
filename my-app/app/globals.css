@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-color: 255, 255, 255; /* White background */
+  --primary-color: 0, 112, 243; /* Tailwind's blue-600 */
+  --secondary-color: 255, 87, 34; /* Tailwind's red-600 */
+  --accent-color: 0, 204, 255; /* Tailwind's cyan-400 */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-color));
+  font-family: 'Inter', sans-serif; /* Ensure to import this font in your project */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold text-gray-900;
+}
+
+button {
+  @apply rounded-lg px-6 py-2 font-semibold transition-all duration-200 ease-in-out;
+  background-color: rgb(var(--primary-color));
+  color: rgb(0, 0, 0);
+}
+
+button:hover {
+  background-color: rgb(var(--primary-color));
+  opacity: 0.8;
+}
+
+input, select {
+  @apply rounded-md border border-gray-300 p-2;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+  @apply outline-none border-blue-500;
+}
+
+.card {
+  @apply bg-white shadow-lg rounded-lg p-4;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  @apply shadow-xl;
+  transform: translateY(-5px);
+}
+
+.modal {
+  @apply fixed top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-50 flex items-center justify-center;
+  z-index: 999;
+}
+
+.modal-content {
+  @apply bg-white rounded-lg p-6;
+  width: 90%;
+  max-width: 500px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+   
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-red-600 text-white hover:bg-red-700;
+  }
+  
+  .btn-accent {
+    @apply bg-cyan-400 text-white hover:bg-cyan-500;
+  }
+  
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
